@@ -23,8 +23,9 @@ extension Data {
         
         guard acceptableStatusCodes.contains(httpResponse.statusCode) else {
             let errorCode = URLError.Code(rawValue: httpResponse.statusCode)
-            let errorString = String(data: self, encoding: .utf8)
-            os_log(.error, "%@", errorString ?? "Unkown Error")
+            if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: self), let error = errorResponse.errors.first {
+                os_log(.error, "%@, %@", error.title, error.detail)
+            }
             throw URLError(errorCode)
         }
         
