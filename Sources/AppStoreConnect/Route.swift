@@ -11,7 +11,7 @@ import Foundation
 public enum Route: URLRequestable {
     static let baseURLString = "https://api.appstoreconnect.apple.com"
 
-    case ageRatingDeclarations(String, AgeRatingDeclarationUpdateRequest) // AgeRatingDeclaration
+    case ageRatingDeclarations(String, AgeRatingDeclarationAttributes) // AgeRatingDeclaration
     
     public static var userAgent: String?
     

@@ -16,4 +16,10 @@ public class AppStoreConnect {
     public init(session: URLSession = .defaultClientSession) {
       self.session = session
     }
+    
+    public func updateAgeRating(id: String, attributes: AgeRatingDeclarationAttributes) async throws -> AgeRatingDeclarationResponse {
+        let route = Route.ageRatingDeclarations(id, attributes)
+        let response: AgeRatingDeclarationResponse = try await decodable(service: route)
+        return response
+    }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AgeRatingDeclarationUpdateRequest: Codable {
+public struct AgeRatingDeclarationAttributes: Codable {
     public var alcoholTobaccoOrDrugUseOrReferences: String
     public var contests: String
     public var gambling: Bool
