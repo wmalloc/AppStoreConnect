@@ -107,3 +107,6 @@ Dependencies/
 .accio/
 
 iOSInjectionProject/
+.build
+.vscode
+*.xcuserstate
